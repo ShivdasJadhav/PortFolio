@@ -1,10 +1,8 @@
 import React from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/Authentication";
-import { useNavigate } from "react-router-dom";
 export default function Login() {
   function userLogin() {
-    let navigate=useNavigate();
     let userEmail = document.getElementById("email").value;
     let userPass = document.getElementById("pass").value;
     window.loginID = userEmail;
@@ -12,7 +10,6 @@ export default function Login() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        navigate('./dashbord')
         alert("Login Successfull");
 
       })

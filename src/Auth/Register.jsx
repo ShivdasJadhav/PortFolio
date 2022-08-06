@@ -2,9 +2,7 @@ import React from "react";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/Authentication";
-import { useNavigate } from "react-router-dom";
 export default function Register() {
-  let navigate=useNavigate();
   async function userRegister(e) {
     e.preventDefault();
     const fname = document.getElementById("fname").value;
@@ -19,7 +17,6 @@ export default function Register() {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          navigate('/');
           alert("Register Successfully");
         })
         .catch((error) => {
